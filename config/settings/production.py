@@ -4,7 +4,6 @@ Production Configurations
 
 - Use djangosecure
 - Use Amazon's S3 for storing static files and uploaded media
-- Use mailgun to send emails
 - Use Redis on Heroku
 
 
@@ -103,16 +102,6 @@ STATIC_URL = MEDIA_URL
 # 'django.contrib.staticfiles'
 AWS_PRELOAD_METADATA = True
 INSTALLED_APPS = ('collectfast', ) + INSTALLED_APPS
-
-# EMAIL
-# ------------------------------------------------------------------------------
-DEFAULT_FROM_EMAIL = env('DJANGO_DEFAULT_FROM_EMAIL',
-                         default='zshoes <noreply@zshoes.local>')
-EMAIL_BACKEND = 'django_mailgun.MailgunBackend'
-MAILGUN_ACCESS_KEY = env('DJANGO_MAILGUN_API_KEY')
-MAILGUN_SERVER_NAME = env('DJANGO_MAILGUN_SERVER_NAME')
-EMAIL_SUBJECT_PREFIX = env("DJANGO_EMAIL_SUBJECT_PREFIX", default='[zshoes] ')
-SERVER_EMAIL = env('DJANGO_SERVER_EMAIL', default=DEFAULT_FROM_EMAIL)
 
 
 # TEMPLATE CONFIGURATION

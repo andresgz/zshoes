@@ -13,7 +13,9 @@ Services
 --------
 
     GET /services/stores/
+
     GET /services/stores/articles/
+
     GET /services/stores/articles/<id>
 
 
@@ -26,6 +28,8 @@ Install tests requirements:
 
 
 Run tests in Test Database mode:
+
+By defaul Lettuce uses the same database of the project
 
     $ python manage.py harvest -T
 
