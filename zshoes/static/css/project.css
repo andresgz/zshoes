@@ -36,3 +36,9 @@ footer {
 
 div.jumbotron {
   margin-top: 100px; }
+
+.text-center {
+  text-align: center; }
+
+.text-right {
+  text-align: right; }
