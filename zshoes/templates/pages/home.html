@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block content %}
+<div class="jumbotron">
+      <div class="container">
+        <h1 class="text-center">{% trans "SuperZapatos Administration system" %}</h1>
+        <p class="text-center"><a class="btn btn-primary btn-lg" href="{% url 'stores:list' %}" role="button">{% trans "Go to Stores" %} »</a></p>
+      </div>
+    </div>
+{% endblock content %}

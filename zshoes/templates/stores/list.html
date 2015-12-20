@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% load bootstrap3 i18n %}
+
+{% block breadcrumb %}
+    <li class="active">Stores</li>
+{% endblock %}
+{% block content %}
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-xs-8">
+            <h1>{% trans "Stores" %}</h1>
+        </div>
+        <div class="col-xs-4 text-right">
+            <a class="btn btn-primary conversation-create-btn" href="{% url 'stores:create' %}">
+            <i class="fa fa-plus"></i>
+            <span class="hidden-xs">{% trans "Create Store" %}</span>
+            </a>
+        </div>
+    </div>
+    <div class="row">
+    {% for store in object_list %}
+        <div class="list-group">
+          <a href="{% url 'stores:update' store.id %}" class="list-group-item">{{ store.name }}</a>
+        </div>
+    {% endfor %}
+    </div>
+</div>
+{% endblock content %}

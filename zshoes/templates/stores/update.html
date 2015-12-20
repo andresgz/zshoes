@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% load bootstrap3 i18n %}
+
+{% block breadcrumb %}
+    <li><a href="{% url 'stores:list' %}">{% trans "Stores" %}</a></li>
+    <li class="active">{% trans "Update Store" %}: {{ form.name.value }}</li>
+{% endblock %}
+
+{% block content %}
+
+<h1 class="text-center">{% trans "Update Store" %}: {{ form.name.value }}</h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <form action="" method="post" class="form">
+          {% csrf_token %}
+          {% bootstrap_form form %}
+          {% buttons %}
+              <button type="submit" class="btn btn-primary">
+                  {% bootstrap_icon "star" %} {% trans "Save" %}
+              </button>
+          {% endbuttons %}
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock content %}
