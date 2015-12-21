@@ -16,7 +16,7 @@ Services
 
     GET /services/stores/articles/
 
-    GET /services/stores/articles/<id>
+    GET /services/articles/stores/<id>
 
 
 Running BDD tests
